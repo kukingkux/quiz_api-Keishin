@@ -23,8 +23,8 @@ exports.getAll = async(req, res) => {
     try{
         const quizzes = await Quiz.findAll()
         res.json({
-            message: "Quizzes retrieved successfully.",
-            data: quiz,
+            message: "Quizzes retrieved suc cessfully.",
+            data: quizzes,
         })
     } catch (error) {
         res.status(500).json({
@@ -74,7 +74,7 @@ exports.delete = async (req, res) => {
 }
 
 // GET ONE
-exports.findOne = async(res, res) => {
+exports.findOne = async(req, res) => {
     const id = req.params.id
     try {
         const quiz = await Quiz.findByPk(id, {rejectOnEmpty: true})
